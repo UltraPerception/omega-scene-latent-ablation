@@ -1,0 +1,260 @@
+{
+  "schema": "omega_pairwise_ablation_classes_v1",
+  "references": [
+    "docs/training_dataset_classification_catalog.md",
+    "docs/current_test_dataset_classification.md",
+    "docs/omega_scene_latent_tartanairv2_pairwise_ablation_plan.md"
+  ],
+  "classes": {
+    "C1": {
+      "name": "室内空间与建筑几何",
+      "short_name": "室内",
+      "description": "房间、建筑、真实/合成室内、手持与头戴采集。"
+    },
+    "C2": {
+      "name": "室外场地、街景与地面移动",
+      "short_name": "地面与街景",
+      "description": "城市、道路、自然场地和地面移动平台。"
+    },
+    "C3": {
+      "name": "航空与跨高度几何",
+      "short_name": "航空",
+      "description": "UAV、航空测绘、空地视角与高度变化。"
+    },
+    "C4": {
+      "name": "物体中心与近场多视图",
+      "short_name": "物体与近场",
+      "description": "物体环绕、桌面近场与多视图资产。"
+    },
+    "C5": {
+      "name": "动态场景与人-物交互",
+      "short_name": "动态与交互",
+      "description": "人物、动物、动态物体、交互与遮挡。"
+    },
+    "C6": {
+      "name": "跨场景与通用几何",
+      "short_name": "跨场景",
+      "description": "跨多个场景类别的几何来源；不代表已覆盖所有其他主类。"
+    }
+  },
+  "training": {
+    "tartanair": {
+      "name": "TartanAirV2",
+      "primary": "C6",
+      "tags": [
+        "合成",
+        "室内外",
+        "连续移动相机"
+      ]
+    },
+    "adt": {
+      "name": "ADT",
+      "primary": "C1",
+      "tags": [
+        "真实头戴",
+        "室内",
+        "数字孪生参考"
+      ]
+    },
+    "hypersim": {
+      "name": "Hypersim",
+      "primary": "C1",
+      "tags": [
+        "合成室内",
+        "多视点",
+        "精确几何"
+      ]
+    },
+    "scannet": {
+      "name": "ScanNet",
+      "primary": "C1",
+      "tags": [
+        "真实室内",
+        "手持",
+        "RGB-D 扫描"
+      ]
+    },
+    "scannetpp": {
+      "name": "ScanNet++",
+      "primary": "C1",
+      "tags": [
+        "真实室内",
+        "DSLR 多视图",
+        "拍摄顺序不等于物理速度"
+      ]
+    },
+    "vkitti2": {
+      "name": "VKITTI2",
+      "primary": "C2",
+      "cross_classes": [
+        "C5"
+      ],
+      "tags": [
+        "合成驾驶",
+        "多天气",
+        "动态交通"
+      ]
+    },
+    "argoverse2": {
+      "name": "AV2",
+      "primary": "C2",
+      "tags": [
+        "真实汽车",
+        "城市",
+        "连续轨迹"
+      ]
+    },
+    "mpsd": {
+      "name": "MPSD",
+      "primary": "C2",
+      "tags": [
+        "真实街景",
+        "多视图重建",
+        "仅 10/16 帧"
+      ]
+    },
+    "mvs_synth": {
+      "name": "MVS-Synth",
+      "primary": "C2",
+      "tags": [
+        "合成城市/道路",
+        "多视图",
+        "图采样"
+      ]
+    },
+    "paralleldomain4d": {
+      "name": "ParallelDomain4D",
+      "primary": "C2",
+      "cross_classes": [
+        "C5"
+      ],
+      "tags": [
+        "合成驾驶",
+        "动态交通",
+        "多视图"
+      ]
+    },
+    "midair": {
+      "name": "MidAir",
+      "primary": "C3",
+      "tags": [
+        "合成低空 UAV",
+        "自然环境",
+        "连续轨迹"
+      ]
+    },
+    "dynamicreplica": {
+      "name": "DynamicReplica",
+      "primary": "C5",
+      "tags": [
+        "合成动态人物/动物",
+        "遮挡",
+        "连续视频"
+      ]
+    },
+    "sailvos3d": {
+      "name": "SAIL-VOS3D",
+      "primary": "C5",
+      "tags": [
+        "合成动态城市",
+        "动态物体",
+        "遮挡"
+      ]
+    },
+    "blendedmvs": {
+      "name": "BlendedMVS",
+      "primary": "C6",
+      "tags": [
+        "重建派生",
+        "混合渲染/真实外观",
+        "多视图"
+      ]
+    },
+    "dl3dv": {
+      "name": "DL3DV",
+      "primary": "C6",
+      "tags": [
+        "真实室内外",
+        "手机/无人机视频",
+        "COLMAP 几何"
+      ]
+    },
+    "unrealstereo4k": {
+      "name": "UnrealStereo4K",
+      "primary": "C6",
+      "tags": [
+        "合成",
+        "高分辨率立体",
+        "混合场景"
+      ]
+    }
+  },
+  "testing": {
+    "7scenes": {
+      "name": "7-Scenes",
+      "primary": "C1",
+      "tags": [
+        "真实室内",
+        "手持 Kinect",
+        "近场"
+      ],
+      "scope": "7 个场景，18 条标准 TestSplit 序列。"
+    },
+    "argoverse2": {
+      "name": "AV2",
+      "primary": "C2",
+      "tags": [
+        "真实汽车",
+        "城市",
+        "连续轨迹"
+      ],
+      "scope": "固定 19 个 held-out logs，与训练 logs 无交集；不是官方隐藏 test。"
+    },
+    "kitti05": {
+      "name": "KITTI 05",
+      "primary": "C2",
+      "tags": [
+        "真实汽车",
+        "室外道路",
+        "连续轨迹"
+      ],
+      "scope": "KITTI odometry sequence 05，2,761 张 image_2。"
+    },
+    "tum_dynamic": {
+      "name": "TUM-Dynamic",
+      "primary": "C5",
+      "tags": [
+        "真实动态室内",
+        "人物活动",
+        "不同相机运动"
+      ],
+      "scope": "fr3 sitting/walking × static/xyz/halfsphere/rpy，共 8 条序列。"
+    },
+    "eth3d": {
+      "name": "ETH3D",
+      "primary": "C6",
+      "tags": [
+        "真实室内外",
+        "稀疏/宽视点",
+        "激光几何参考"
+      ],
+      "scope": "13 个场景；主表 N=10 使用 coverage_10 的 416 个窗口。"
+    },
+    "euroc": {
+      "name": "EuRoC",
+      "primary": "C3",
+      "tags": [
+        "真实 UAV",
+        "工业室内/运动捕捉室",
+        "旋转与模糊"
+      ],
+      "scope": "全部 11 条序列，88 个固定 covariance 窗口，N=10/32 各 44。"
+    }
+  },
+  "data_recoveries": {
+    "A14_dl3dv": {
+      "policy": "Only windows containing confirmed truncated PNGs: deterministic complete window from same scene, same N, same stride; retain original augmentation RNG",
+      "resume_checkpoint_step": 7100
+    }
+  }
+}

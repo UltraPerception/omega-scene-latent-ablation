@@ -1,0 +1,18 @@
+{
+  "snapshot_updated_utc": "2026-10-28T05:57:08.611105+00:00",
+  "exported_utc": "2026-10-29T01:39:27.642394+00:00",
+  "completed_runs": 16,
+  "total_runs": 16,
+  "primary_frames": 10,
+  "secondary_frames": 32,
+  "datasets": [
+    "7scenes",
+    "argoverse2",
+    "kitti05",
+    "tum_dynamic",
+    "eth3d",
+    "euroc"
+  ],
+  "rows": 96,
+  "refresh_policy": "Static snapshot; republish to update results."
+}
