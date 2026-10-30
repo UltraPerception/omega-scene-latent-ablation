@@ -255,6 +255,24 @@
     "A14_dl3dv": {
       "policy": "Only windows containing confirmed truncated PNGs: deterministic complete window from same scene, same N, same stride; retain original augmentation RNG",
       "resume_checkpoint_step": 7100
+    },
+    "B01_scannet_dl3dv": {
+      "policy": "same-scene complete PNG window replacement"
+    },
+    "B02_unreal_dl3dv": {
+      "policy": "same-scene complete PNG window replacement"
+    },
+    "B05_scannet_dl3dv_av2": {
+      "policy": "same-scene complete PNG window replacement"
+    },
+    "B06_unreal_dl3dv_adt": {
+      "policy": "same-scene complete PNG window replacement"
+    },
+    "B07_all_equal": {
+      "policy": "same-scene complete PNG window replacement"
+    },
+    "B08_all_tav50": {
+      "policy": "same-scene complete PNG window replacement"
     }
   }
 }

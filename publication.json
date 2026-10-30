@@ -1,8 +1,8 @@
 {
-  "snapshot_updated_utc": "2026-10-28T05:57:08.611105+00:00",
-  "exported_utc": "2026-10-29T01:39:27.642394+00:00",
-  "completed_runs": 16,
-  "total_runs": 16,
+  "snapshot_updated_utc": "2026-10-29T14:47:02.435718+00:00",
+  "exported_utc": "2026-10-30T20:58:30.724580+00:00",
+  "completed_runs": 24,
+  "total_runs": 24,
   "primary_frames": 10,
   "secondary_frames": 32,
   "datasets": [
@@ -13,6 +13,20 @@
     "eth3d",
     "euroc"
   ],
-  "rows": 96,
+  "rows": 144,
+  "campaigns": {
+    "omega_scene_latent_pairwise_10k_v1": {
+      "label": "A 轮：原十六组单源消融",
+      "updated_utc": "2026-10-28T05:57:08.611105+00:00",
+      "total_runs": 16,
+      "completed_runs": 16
+    },
+    "omega_scene_latent_multisource_10k_v2": {
+      "label": "B 轮：新八组多源组合",
+      "updated_utc": "2026-10-29T14:47:02.435718+00:00",
+      "total_runs": 8,
+      "completed_runs": 8
+    }
+  },
   "refresh_policy": "Static snapshot; republish to update results."
 }
